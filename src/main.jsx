@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import App from "./App";
 import Home from "./pages/Home";
-import Characters from "./pages/Characters";
+import Animes from "./pages/Animes";
 
 import "./index.css";
 
@@ -16,8 +16,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route element={<App />}>
           <Route path="/" element={<Home />} />
-          <Route path="characters" element={<Characters />} />
-          <Route path="characters/:id" element={<Characters />} />
+          <Route path="animes" element={<Animes />} />
+          <Route path="animes/:id" element={<Animes />} />
         </Route>
       </Routes>
     </BrowserRouter>

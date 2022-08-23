@@ -28,7 +28,7 @@ const navbar = () => {
                   Home
                 </Link>
                 <Link to="characters" className="nav-link">
-                  Characters
+                  Animes
                 </Link>
               </Nav>
               
