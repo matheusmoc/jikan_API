@@ -1,0 +1,36 @@
+
+.navbar{
+    padding: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    
+}
+
+.navbar-brand{
+    padding: 1.5rem;
+    background-color: #000000;
+    text-align: right;
+    min-width: max-content;
+    color: antiquewhite;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.navbar-brand:active,
+.navbar-brand:hover,
+.navbar-brand:visited
+{
+    color: antiquewhite;
+}
+
+.cardCharacter{
+    padding-top: 100px;
+}
+
+.hoverButton:hover{
+    border: 2px solid black;
+    color: #000000;
+    font-weight: bold;
+    background-color: white;
+}
