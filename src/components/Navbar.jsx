@@ -27,7 +27,7 @@ const navbar = () => {
                 <Link to="/" className="nav-link">
                   Home
                 </Link>
-                <Link to="characters" className="nav-link">
+                <Link to="animes" className="nav-link">
                   Animes
                 </Link>
               </Nav>
