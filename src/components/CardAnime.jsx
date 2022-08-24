@@ -12,18 +12,28 @@ import {
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
+
 const cardStyle = {
   width: "18rem",
   margin: "10px",
   padding: "10px",
+  left: '4.5rem'
+};
+
+const OffcanvasStyle = {
+
 };
 
 export default function CardAnime({ anime }) {
   //offcanvas
   const [show, setShow] = useState(false);
+  const [detail, setDetail] = useState("");
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = (_, animeTerm) => {
+    setShow(true);
+    setDetail(animeTerm);
+  };
 
   return (
     <>
@@ -68,10 +78,9 @@ export default function CardAnime({ anime }) {
                 View detail
               </Button>
               <Button
-                key={animeTerm.mal_id}
                 className="btn btn-dark hoverButton"
                 variant="dark"
-                onClick={handleShow}
+                onClick={(e) => handleShow(e, animeTerm)}
                 style={{
                   borderRadius: "0",
                   marginBottom: "1rem",
@@ -83,15 +92,15 @@ export default function CardAnime({ anime }) {
           </Col>
         </Row>
       ))}
-      <Offcanvas show={show} onHide={handleClose} placement="bottom">
+      <Offcanvas className="background-offcanva"  show={show} onHide={handleClose} placement="bottom" scroll={true}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
-
-        <Offcanvas.Body className="d-flex justify-content-center">
-          <Image src="" width="150" roundedCircle={true} />
-          <p className="mb-0"></p>
+        <Offcanvas.Body className="d-flex justify-content-center mb-5" >
+          <Image  width="150" roundedCircle={true} />
+            <p className="font-synopsis">"{detail.synopsis}..."</p>
         </Offcanvas.Body>
+
       </Offcanvas>
     </>
   );

@@ -21,8 +21,6 @@ function Anime() {
     getMangaAnime();
   }, []);
 
-
-
   return (
     <Container className="cardCharacter">
       <div className="card-group col-md-12">

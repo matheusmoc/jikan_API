@@ -44,3 +44,19 @@
     height: 150px;
     width: 150px;
 }
+
+.font-synopsis{
+    font-style: italic;
+    font-weight: 400;
+    font-family: 'Medieval';
+    font-size: 1.5rem;
+    position: relative;
+    color: rgb(250, 250, 250);
+}
+
+.background-offcanvas{
+    background-image: url("./images/offcanvas2.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
