@@ -18,13 +18,12 @@ const cardStyle = {
   padding: "10px",
 };
 
-export default function CardCharacter({ anime }) {
+export default function CardAnime({ anime }) {
   //offcanvas
   const [show, setShow] = useState(false);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const { titleAnime } = useParams();
 
   return (
     <>
@@ -68,9 +67,8 @@ export default function CardCharacter({ anime }) {
               >
                 View detail
               </Button>
-
-              <Link
-                to={`animes-details/${animeTerm.title}`}
+              <Button
+                key={animeTerm.mal_id}
                 className="btn btn-dark hoverButton"
                 variant="dark"
                 onClick={handleShow}
@@ -80,22 +78,21 @@ export default function CardCharacter({ anime }) {
                 }}
               >
                 Description
-              </Link>
+              </Button>
             </Card>
           </Col>
         </Row>
       ))}
-          <Offcanvas show={show} onHide={handleClose} placement="bottom">
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title></Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body className="d-flex justify-content-center">
-              <Image src="" width="150" roundedCircle={true} />
-              <p className="mb-0">
-                I will not close if you click outside of me.
-              </p>
-            </Offcanvas.Body>
-          </Offcanvas>
+      <Offcanvas show={show} onHide={handleClose} placement="bottom">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title></Offcanvas.Title>
+        </Offcanvas.Header>
+
+        <Offcanvas.Body className="d-flex justify-content-center">
+          <Image src="" width="150" roundedCircle={true} />
+          <p className="mb-0"></p>
+        </Offcanvas.Body>
+      </Offcanvas>
     </>
   );
 }

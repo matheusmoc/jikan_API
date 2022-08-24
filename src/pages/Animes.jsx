@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/esm/Container";
-import CardCharacter from "../components/CardCharacter";
+import CardAnime from "../components/CardAnime";
 import { useState, useEffect } from "react";
 
 function Anime() {
@@ -26,7 +26,7 @@ function Anime() {
   return (
     <Container className="cardCharacter">
       <div className="card-group col-md-12">
-        <CardCharacter anime={Anime} />
+        <CardAnime anime={Anime} />
       </div>
     </Container>
   );
