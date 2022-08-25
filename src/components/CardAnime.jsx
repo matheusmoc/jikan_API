@@ -27,7 +27,7 @@ const OffcanvasStyle = {
 export default function CardAnime({ anime }) {
   //offcanvas
   const [show, setShow] = useState(false);
-  const [detail, setDetail] = useState("");
+  const [detail, setDetail] = useState([]);
 
   const handleClose = () => setShow(false);
   const handleShow = (_, animeTerm) => {
@@ -62,7 +62,7 @@ export default function CardAnime({ anime }) {
                 height={270}
                 src={animeTerm.images.jpg.image_url}
               />
-              <Card.Body>
+              <Card.Body >
                 <Card.Title>{animeTerm.title}</Card.Title>
               </Card.Body>
               <Button
@@ -92,12 +92,12 @@ export default function CardAnime({ anime }) {
           </Col>
         </Row>
       ))}
-      <Offcanvas className="background-offcanva"  show={show} onHide={handleClose} placement="bottom" scroll={true}>
+      <Offcanvas className="background-offcanvas" show={show} onHide={handleClose} placement="bottom" scroll={true}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="d-flex justify-content-center mb-5" >
-          <Image  width="150" roundedCircle={true} />
+          {/* <Image   width="150" roundedCircle={true} /> */}
             <p className="font-synopsis">"{detail.synopsis}..."</p>
         </Offcanvas.Body>
 
