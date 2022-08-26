@@ -5,7 +5,6 @@ import {
   Card,
   Button,
   Offcanvas,
-  Image,
   Container,
   Spinner,
 } from "react-bootstrap";
