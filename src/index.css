@@ -1,4 +1,4 @@
-
+/*navbar*/
 .navbar{
     padding: 0;
     background-color: white;
@@ -24,8 +24,17 @@
     color: antiquewhite;
 }
 
+/*card animes*/
+
 .cardCharacter{
     padding-top: 100px;
+}
+
+/*buttons*/
+
+.button-card{
+    margin-left: 10px ;
+    margin-right:10px ;
 }
 
 .hoverButton:hover{
@@ -34,6 +43,8 @@
     font-weight: bold;
     background-color: white;
 }
+
+/*spinner loading*/
 
 .loading{
     display: flex;
@@ -44,6 +55,8 @@
     height: 150px;
     width: 150px;
 }
+
+/*offcanvas*/
 
 .font-synopsis{
     font-style: italic;

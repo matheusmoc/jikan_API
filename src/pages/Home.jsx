@@ -92,7 +92,7 @@ export default function Home() {
                 <h2>
                   Nam mi enim, auctor non ultricies a, fringilla eu risus.
                   Praesent vitae lorem et elit tincidunt accumsan suscipit eu
-                  libero.{" "}
+                  libero.
                 </h2>
                 <figcaption>Nam mi enim, auctor non ultricies.</figcaption>
               </figure>
