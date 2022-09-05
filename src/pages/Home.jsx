@@ -1,8 +1,26 @@
 import React from "react";
-
-import img from "./images/home-slider.jpg";
+import img from "../images/home-slider.jpg";
+import CardNews from "../components/CardNews";
+import { useState, useEffect } from "react";
+import { Container, Row } from "react-bootstrap";
 
 export default function Home() {
+  
+  const [News, setNews] = useState([]);
+
+  const getNews = async () => {
+    const temp = await fetch(
+      "https://api.jikan.moe/v4/manga/2/forum"
+    ).then((res) => res.json());
+    console.log(temp); //requisição dos dados como json
+
+    setNews(temp.data.slice()); //pega todo array dentro de data
+  };
+
+  useEffect(() => {
+    // console.log("Character List");
+    getNews();
+  }, []);
   return (
     <>
       <div className="jumbotron jumbotron-fluid d-md-none">
@@ -33,7 +51,11 @@ export default function Home() {
         data-ride="carousel"
       >
         <ol className="carousel-indicators">
-          <li data-target="#corouselHome" data-slide-to="0" className="active"></li>
+          <li
+            data-target="#corouselHome"
+            data-slide-to="0"
+            className="active"
+          ></li>
           <li data-target="#corouselHome" data-slide-to="1"></li>
         </ol>
 
@@ -70,7 +92,10 @@ export default function Home() {
           role="button"
           data-slide="prev"
         >
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
           <span className="sr-only">Previous</span>
         </a>
         <a
@@ -79,72 +104,28 @@ export default function Home() {
           role="button"
           data-slide="next"
         >
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
           <span className="sr-only">Next</span>
         </a>
       </div>
-
+      
       <section className="section-quote">
-        <div className="container">
-          <div className="row">
+        <Container style={{padding: '50px'}}>
+          <Row>
             <div className="col-10 offset-1">
               <figure>
-                <h2>
-                  Nam mi enim, auctor non ultricies a, fringilla eu risus.
-                  Praesent vitae lorem et elit tincidunt accumsan suscipit eu
-                  libero.
-                </h2>
+                <h2>News</h2>
                 <figcaption>Nam mi enim, auctor non ultricies.</figcaption>
               </figure>
             </div>
-          </div>
-        </div>
+          </Row>
+        </Container>
       </section>
 
-
-	
-	<section className="section-cards mt-5 parallax">
-        <div className="container">
-            <div className="row">
-                
-                <div className="card col-sm-6 col-md-3">
-                    <img src="img/c01.jpg" alt="" className="card-img-top" />
-                    <div className="card-body">
-                        <h2 className="card-title h5">Card title</h2>
-                        <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p className="card-text"><small>Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                
-                 <div className="card col-sm-6 col-md-3">
-                    <img src="img/c02.jpg" alt="" className="card-img-top" />
-                    <div className="card-body">
-                        <h2 className="card-title h5">Card title</h2>
-                        <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                        <p className="card-text"><small>Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                
-                <div className="card col-sm-6 col-md-3">
-                    <img src="img/c03.jpg" alt="" className="card-img-top" />
-                    <div className="card-body">
-                        <h2 className="card-title h5">Card title</h2>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        <p className="card-text"><small>Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                
-                <div className="card col-sm-6 col-md-3">
-                    <img src="img/c04.jpg" alt="" className="card-img-top" />
-                    <div className="card-body">
-                        <h2 className="card-title h5">Card title</h2>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        <p className="card-text"><small>Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-	</section> 
+      <CardNews props={News} />
     </>
   );
 }

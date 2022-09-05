@@ -9,6 +9,7 @@ import {
   Spinner,
   ButtonGroup,
 } from "react-bootstrap";
+
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
@@ -38,8 +39,7 @@ export default function CardAnime({ anime }) {
               <Spinner
                 className="loading-element"
                 animation="border"
-                role="status"
-              ></Spinner>
+                role="status"></Spinner>
               <span className="visually-hidden">Loading...</span>
             </div>
           </>
