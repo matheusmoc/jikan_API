@@ -5,13 +5,12 @@ import { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 
 export default function Home() {
-  
   const [News, setNews] = useState([]);
 
   const getNews = async () => {
-    const temp = await fetch(
-      "https://api.jikan.moe/v4/manga/2/forum"
-    ).then((res) => res.json());
+    const temp = await fetch("https://api.jikan.moe/v4/manga/2/forum").then(
+      (res) => res.json()
+    );
     console.log(temp); //requisição dos dados como json
 
     setNews(temp.data.slice()); //pega todo array dentro de data
@@ -111,9 +110,9 @@ export default function Home() {
           <span className="sr-only">Next</span>
         </a>
       </div>
-      
+
       <section className="section-quote">
-        <Container style={{padding: '50px'}}>
+        <Container style={{ padding: "50px" }}>
           <Row>
             <div className="col-10 offset-1">
               <figure>
@@ -125,7 +124,11 @@ export default function Home() {
         </Container>
       </section>
 
-      <CardNews props={News} />
+      <section className="parallax">
+        <Container>
+          <CardNews props={News} />
+        </Container>
+      </section>
     </>
   );
 }
