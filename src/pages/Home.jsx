@@ -22,15 +22,15 @@ export default function Home() {
   }, []);
   return (
     <>
-      <div className="jumbotron jumbotron-fluid d-md-none">
+      <div className="jumbotron-fluid text-white bg-dark d-md-none p-5">
         <div className="container">
           <h1 className="display-4">
-            Cutting Edge <abbr title="Wordpress">WP</abbr> business theme
+            Cutting Edge <abbr title="jumbotron">WP</abbr> business theme
           </h1>
           <p className="lead">
             Gutful of bottlo no dramas he's got a massive hooroo.
           </p>
-          <a href="#" className="btn btn-primary btn-lg">
+          <a href="#" className="btn btn-outline-light">
             Buy it now
           </a>
 
@@ -38,7 +38,7 @@ export default function Home() {
           <p className="lead">
             A very artsy photo with waves crashing over rocks. So /emosh.
           </p>
-          <a href="#" className="btn btn-primary btn-lg">
+          <a href="#" className="btn btn-outline-light">
             Beer me!
           </a>
         </div>

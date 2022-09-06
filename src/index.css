@@ -24,6 +24,11 @@
     color: antiquewhite;
 }
 
+.jumbotron-fluid{
+    margin-top: 80px;
+    
+}
+
 /*card animes*/
 
 .cardCharacter{
@@ -97,3 +102,12 @@
       background-attachment: scroll;
     }
   }
+
+
+.card {
+    border: none;
+}
+
+.card-body{
+    border-left: 1px solid rgba(0,0,0,.15);
+}

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Spinner, Container, Row } from "react-bootstrap";
 import guts from "../images/profile-guts.png";
 const CardNews = ({ props }) => {
+
+  
   return (
     <>
       <Container>
@@ -23,8 +25,9 @@ const CardNews = ({ props }) => {
       <section className="section-cards mt-5">
         <div className="container">
           <div className="row">
+
             {props.map((newsTerm) => (
-              <div className="card">
+              <div className="card bg-dark text-light m-4 p-3">
                 <Row>
                   <div className="col">
                     <img
@@ -50,6 +53,7 @@ const CardNews = ({ props }) => {
                 </Row>
               </div>
             ))}
+
           </div>
         </div>
       </section>

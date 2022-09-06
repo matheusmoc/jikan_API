@@ -8,6 +8,7 @@ import {
   Container,
   Spinner,
   ButtonGroup,
+  Pagination
 } from "react-bootstrap";
 
 import { useState } from "react";
@@ -19,6 +20,8 @@ const cardStyle = {
   left: "4.5rem",
 };
 
+
+
 export default function CardAnime({ anime }) {
   //offcanvas
   const [show, setShow] = useState(false);
@@ -29,6 +32,7 @@ export default function CardAnime({ anime }) {
     setShow(true);
     setDetail(animeTerm);
   };
+
 
   return (
     <>
